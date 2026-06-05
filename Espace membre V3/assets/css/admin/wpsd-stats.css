@@ -1,0 +1,15 @@
+.wpsd-stats-wrap { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+.wpsd-stats-filters { margin: 16px 0; display: flex; gap: 10px; align-items: center; }
+.wpsd-stats-cards { display: flex; flex-wrap: wrap; margin: 0 -1% 20px; }
+.wpsd-stat-card { background: #fff; border: 1px solid #d1d5db; border-radius: 8px; padding: 16px; width: 23%; margin: 1%; text-align: center; box-shadow: 0 1px 3px rgba(0,0,0,0.06); }
+.wpsd-stat-number { font-size: 28px; font-weight: 700; color: #005247; }
+.wpsd-stat-label { font-size: 12px; color: #6b7280; margin-top: 4px; text-transform: uppercase; letter-spacing: 0.3px; }
+.wpsd-stats-charts { display: flex; gap: 20px; margin-bottom: 24px; }
+.wpsd-chart-box { flex: 1; background: #fff; border: 1px solid #d1d5db; border-radius: 8px; padding: 16px; }
+.wpsd-chart-box h2 { font-size: 15px; margin: 0 0 12px; color: #005247; }
+.wpsd-chart-box canvas { width: 100% !important; height: 300px !important; }
+.wpsd-stats-table { background: #fff; border: 1px solid #d1d5db; border-radius: 8px; padding: 16px; }
+.wpsd-stats-table h2 { font-size: 15px; margin: 0 0 12px; color: #005247; }
+.wpsd-stats-table .wp-list-table { width: 100%; border-collapse: collapse; }
+.wpsd-stats-table .wp-list-table th { background: #f9fafb; padding: 8px 12px; text-align: left; font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.3px; color: #374151; border-bottom: 2px solid #e5e7eb; }
+.wpsd-stats-table .wp-list-table td { padding: 8px 12px; border-bottom: 1px solid #f3f4f6; }

@@ -1,0 +1,491 @@
+/* ==============================================
+   FORMULAIRE D'INSCRIPTION — wpsd_register
+   ============================================== */
+.wpsd-register-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.wpsd-register-card {
+    background: #005247 !important;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 1px solid #e0e4e0;
+}
+
+.wpsd-register-card h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #FBF1CA !important;
+    border: none;
+    padding: 0;
+    font-weight: 600;
+}
+
+.wpsd-form-row { margin-bottom: 0; }
+
+.wpsd-two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.wpsd-form-group {
+    margin-bottom: 20px;
+}
+
+.wpsd-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #e0b912 !important;
+    font-size: 14px;
+}
+
+.wpsd-required { color: #e74c3c; font-size: 12px; }
+
+.wpsd-form-group input[type="text"],
+.wpsd-form-group input[type="email"],
+.wpsd-form-group input[type="tel"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #e0e4e0;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    transition: all 0.2s;
+    color: #e0b912 !important;
+    background: #FBF1CA !important;
+}
+
+.wpsd-form-group input::placeholder {
+    color: rgba(0, 82, 71, 0.65);
+}
+
+.wpsd-form-group input:focus {
+    border-color: #e0b912;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(224,185,18,0.15);
+}
+
+/* Catégories */
+.wpsd-categories {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.wpsd-category {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 12px 8px;
+    border: 1px solid #e0e4e0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #FBF1CA;
+}
+
+.wpsd-category:hover {
+    border-color: #e0b912;
+    background: #FBF1CA;
+}
+
+.wpsd-category input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.wpsd-category-title {
+    font-weight: 500;
+    color: #005247 !important;
+    font-size: 13px;
+}
+
+.wpsd-category:has(input:checked) {
+    border-color: #e0b912;
+    background: #e0b912;
+    border-width: 1px;
+}
+
+.wpsd-category:has(input:checked) .wpsd-category-title {
+    color: #005247 !important;
+    font-weight: 600;
+}
+
+/* Plans */
+.wpsd-plans {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.wpsd-plan {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 16px 12px;
+    border: 1px solid #e0e4e0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: #FBF1CA;
+}
+
+.wpsd-plan:hover {
+    border-color: #e0b912;
+    background: #fbf1ca;
+}
+
+.wpsd-plan input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.wpsd-plan-title {
+    font-weight: 600;
+    color: #005247 !important;
+    margin-bottom: 6px;
+    font-size: 14px;
+}
+
+.wpsd-plan-price {
+    font-weight: 500;
+    color: #005247 !important;
+    font-size: 13px;
+}
+
+.wpsd-plan:has(input:checked) {
+    border-color: #e0b912;
+    background: #e0b912;
+}
+
+.wpsd-plan:has(input:checked) .wpsd-plan-title,
+.wpsd-plan:has(input:checked) .wpsd-plan-price {
+    color: #005247 !important;
+    font-weight: 600;
+}
+
+/* Toggle / Boutons */
+.wpsd-toggle-label { color: #DAC708 !important; }
+
+.wpsd-btn-block {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    background: #e0b912;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.wpsd-btn-block:hover { background: #c2a50f; }
+
+.wpsd-alert-error {
+    background: #fee2e2;
+    color: #7f1d1d;
+    border-left: 4px solid #dc2626;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+    font-size: 14px;
+}
+
+/* ==============================================
+   FORMULAIRE DE CONNEXION — wpsd_login
+   ============================================== */
+.wpsd-register-wrapper.wpsd-login-form .wpsd-register-card h3 {
+    color: #FBF1CA !important;
+}
+
+.wpsd-btn-block.wpsd-btn-primary {
+    background: #DAC708 !important;
+    color: #005247 !important;
+    border: 1px solid #DAC708 !important;
+    font-weight: 600 !important;
+}
+
+.wpsd-btn-block.wpsd-btn-primary:hover {
+    background: #c2a50f !important;
+    border-color: #c2a50f !important;
+    color: #005247 !important;
+}
+
+.wpsd-lost-password {
+    color: #FBF1CA !important;
+    text-decoration: underline !important;
+    font-weight: 500 !important;
+}
+
+.wpsd-lost-password:hover {
+    color: #DAC708 !important;
+    text-decoration: none !important;
+}
+
+.wpsd-register-link {
+    margin-top: 20px !important;
+    text-align: center !important;
+    color: #FBF1CA !important;
+    font-size: 14px !important;
+}
+
+.wpsd-register-link a {
+    color: #DAC708 !important;
+    text-decoration: underline !important;
+    font-weight: 600 !important;
+}
+
+.wpsd-register-link a:hover {
+    color: #FBF1CA !important;
+    text-decoration: none !important;
+}
+
+.wpsd-login-form .wpsd-form-group label {
+    color: #DAC708 !important;
+}
+
+.wpsd-login-form .wpsd-form-group input[type="text"],
+.wpsd-login-form .wpsd-form-group input[type="email"],
+.wpsd-login-form .wpsd-form-group input[type="tel"],
+.wpsd-login-form .wpsd-form-group input[type="password"] {
+    color: #005247 !important;
+    background: #FBF1CA !important;
+    border: 1px solid #DAC708;
+}
+
+.wpsd-checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+    color: #FBF1CA !important;
+    font-weight: 500 !important;
+    font-size: 14px;
+}
+
+.wpsd-checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    cursor: pointer;
+    accent-color: #DAC708;
+    flex-shrink: 0;
+}
+
+.wpsd-checkbox-text {
+    color: #FBF1CA !important;
+    font-weight: 500 !important;
+    white-space: nowrap;
+}
+
+/* ==============================================
+   FORMULAIRE DE CONTACT — wpsd_contact
+   ============================================== */
+.wpsd-contact-wrapper {
+    max-width: 650px;
+    margin: 0 auto;
+    font-family: 'Exo', sans-serif;
+}
+
+.wpsd-contact-card {
+    background: white;
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 1px solid #c5b87a;
+}
+
+.wpsd-contact-card h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #005247;
+    font-weight: 600;
+}
+
+.wpsd-contact-group { margin-bottom: 20px; }
+
+.wpsd-contact-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #005247 !important;
+    font-size: 14px;
+}
+
+.wpsd-contact-group .wpsd-required { color: #e74c3c; }
+
+.wpsd-contact-group input[type="text"],
+.wpsd-contact-group input[type="email"],
+.wpsd-contact-group input[type="tel"],
+.wpsd-contact-group select,
+.wpsd-contact-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #c5b87a;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: inherit;
+    transition: all 0.2s;
+    background: white;
+    color: #005247 !important;
+}
+
+.wpsd-contact-group input:focus,
+.wpsd-contact-group select:focus,
+.wpsd-contact-group textarea:focus {
+    border-color: #b89e0e;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(184,158,14,0.2);
+}
+
+.wpsd-contact-group input::placeholder,
+.wpsd-contact-group textarea::placeholder {
+    color: rgba(0, 82, 71, 0.7);
+}
+
+.wpsd-contact-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23005247' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 36px;
+}
+
+.wpsd-contact-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    background: #e0b912;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.wpsd-contact-btn:hover { background: #c2a50f; }
+.wpsd-contact-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.wpsd-contact-success {
+    background: #e6f3f1;
+    color: #005247;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #005247;
+}
+
+.wpsd-contact-error {
+    background: #fee2e2;
+    color: #7f1d1d;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #dc2626;
+}
+
+.wpsd-contact-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+/* ==============================================
+   FORMULAIRE NEWSLETTER — wpsd_newsletter
+   ============================================== */
+.wpsd-newsletter {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    background: #FBF1CA;
+    border: none;
+    border-radius: 10px;
+}
+
+.wpsd-newsletter input[type="email"] {
+    flex: 1;
+    min-width: 240px;
+    padding: 12px 16px;
+    border: 1px solid #e0b912;
+    border-radius: 10px;
+    background: #fff;
+    color: #005247;
+    font-family: 'Exo', sans-serif;
+    font-size: 15px;
+}
+
+.wpsd-newsletter input[type="email"]:focus {
+    outline: none;
+    border-color: #e0b912;
+    box-shadow: 0 0 0 3px rgba(224,185,18,0.15);
+}
+
+.wpsd-newsletter input[type="email"]::placeholder {
+    color: rgba(0, 82, 71, 0.65);
+}
+
+.wpsd-newsletter button {
+    padding: 12px 28px;
+    background: #e0b912;
+    border: 1px solid #e0b912;
+    border-radius: 10px;
+    color: #005247;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(224,185,18,0.25);
+    transition: all 0.2s ease;
+}
+
+.wpsd-newsletter button:hover {
+    background: #c2a50f;
+    border-color: #c2a50f;
+    box-shadow: 0 6px 12px rgba(224,185,18,0.35);
+    transform: translateY(-2px);
+}
+
+.wpsd-newsletter-msg {
+    width: 100%;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #005247;
+    font-weight: 500;
+}
+
+/* ==============================================
+   RESPONSIVE COMMUN
+   ============================================== */
+@media (max-width: 768px) {
+    .wpsd-two-columns { grid-template-columns: 1fr; gap: 0; }
+    .wpsd-categories,
+    .wpsd-plans { flex-direction: column; }
+    .wpsd-register-card { padding: 20px; }
+    .wpsd-category { padding: 10px; }
+}
+
+@media (max-width: 600px) {
+    .wpsd-contact-row { grid-template-columns: 1fr; gap: 0; }
+    .wpsd-contact-card { padding: 20px; }
+    .wpsd-newsletter { flex-direction: column; align-items: stretch; }
+    .wpsd-newsletter button { width: 100%; }
+    .wpsd-form-row { grid-template-columns: 1fr; }
+}

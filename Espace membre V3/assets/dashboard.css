@@ -1,0 +1,536 @@
+/* =========================
+   VARIABLES
+========================= */
+:root {
+  --wpsd-bg: #FBF1CA;
+  --wpsd-card: #ffffff;
+  --wpsd-primary: #e0b912;
+  --wpsd-primary-dark: #c2a50f;
+  --wpsd-primary-light: #FBF1CA;
+  --wpsd-secondary: #005247;
+  --wpsd-secondary-light: rgba(0, 82, 71, 0.08);
+  --wpsd-border: #e0e4e0;
+  --wpsd-text: #005247;
+  --wpsd-muted: #5a6e68;
+  --wpsd-success: #166534;
+  --wpsd-danger: #c73d2a;
+  --wpsd-radius: 14px;
+  --wpsd-radius-sm: 8px;
+  --wpsd-shadow: 0 2px 8px rgba(0, 82, 71, 0.06);
+  --wpsd-shadow-hover: 0 6px 20px rgba(0, 82, 71, 0.10);
+  --wpsd-transition: all 0.18s ease;
+}
+
+/* =========================
+   BASE
+========================= */
+.wpsd-dashboard-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: var(--wpsd-card);
+  padding: 20px 24px;
+  border-radius: var(--wpsd-radius);
+  box-shadow: var(--wpsd-shadow);
+  margin-bottom: 20px;
+  border: 1px solid var(--wpsd-border);
+}
+
+.wpsd-profile-upload { font-size: 12px; }
+.wpsd-profile-info { flex: 1; }
+.wpsd-profile-name { font-size: 18px; font-weight: 600; color: var(--wpsd-text); }
+.wpsd-profile-email { font-size: 14px; color: var(--wpsd-muted); }
+.wpsd-profile-plan { font-size: 14px; margin-top: 4px; }
+.wpsd-profile-logout { margin-top: 8px; }
+.wpsd-profile-logout a { color: var(--wpsd-danger); font-weight: 500; font-size: 13px; }
+
+/* =========================
+   TABS
+========================= */
+.wpsd-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--wpsd-secondary);
+  border-radius: var(--wpsd-radius) var(--wpsd-radius) 0 0;
+  overflow: hidden;
+  gap: 0;
+}
+
+.wpsd-tab {
+  border: none;
+  background: transparent;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: 'Exo', sans-serif;
+  color: var(--wpsd-bg);
+  transition: var(--wpsd-transition);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  opacity: 0.75;
+}
+.wpsd-tab:hover {
+  opacity: 1;
+  background: rgba(255,255,255,0.08);
+}
+.wpsd-tab.is-active {
+  opacity: 1;
+  background: var(--wpsd-bg);
+  color: var(--wpsd-secondary);
+}
+
+/* =========================
+   PANELS
+========================= */
+.wpsd-panels {
+  background: var(--wpsd-bg);
+  border-radius: 0 0 var(--wpsd-radius) var(--wpsd-radius);
+  border: 1px solid var(--wpsd-border);
+  border-top: none;
+}
+.wpsd-panel { display: none; padding: 20px; }
+.wpsd-panel.is-active { display: block; }
+
+/* =========================
+   CARDS
+========================= */
+.wpsd-card {
+  background: var(--wpsd-card);
+  border-radius: var(--wpsd-radius);
+  padding: 20px;
+  box-shadow: var(--wpsd-shadow);
+  border: 1px solid var(--wpsd-border);
+  margin-bottom: 16px;
+}
+.wpsd-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.wpsd-card h3, .wpsd-card-header h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--wpsd-secondary);
+}
+
+/* =========================
+   DASHBOARD GRID
+========================= */
+.wpsd-dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 768px) {
+  .wpsd-dashboard-grid { grid-template-columns: 1fr; }
+}
+
+.wpsd-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.wpsd-stat-card {
+  background: var(--wpsd-card);
+  border-radius: var(--wpsd-radius);
+  padding: 20px;
+  text-align: center;
+  box-shadow: var(--wpsd-shadow);
+  border: 1px solid var(--wpsd-border);
+}
+.wpsd-stat-number {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--wpsd-secondary);
+}
+.wpsd-stat-label {
+  font-size: 12px;
+  color: var(--wpsd-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+.wpsd-text-success { color: var(--wpsd-success) !important; }
+.wpsd-text-danger { color: var(--wpsd-danger) !important; }
+
+/* =========================
+   CARTE
+========================= */
+.wpsd-carte-filters {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+  font-size: 13px;
+}
+.wpsd-carte-filters label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+.wpsd-carte-filters input[type="date"] {
+  padding: 6px 10px;
+  border: 1px solid var(--wpsd-border);
+  border-radius: var(--wpsd-radius-sm);
+  font-size: 13px;
+  font-family: inherit;
+}
+
+#wpsd_carte_map {
+  height: 60vh;
+  border-radius: var(--wpsd-radius);
+  overflow: hidden;
+  border: 1px solid var(--wpsd-border);
+}
+
+.wpsd-legend {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 12px;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+.wpsd-legend-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.wpsd-pin-marker {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: transform 0.15s ease;
+}
+.wpsd-pin-marker:hover {
+    transform: scale(1.3);
+}
+
+.leaflet-div-icon {
+    background: transparent !important;
+    border: none !important;
+}
+.wpsd-legend-dot.is-act { background: var(--wpsd-secondary); }
+.wpsd-legend-dot.is-acc { background: var(--wpsd-primary); }
+.wpsd-legend-dot.is-act { background: #005247; }
+.wpsd-legend-dot.is-acc { background: #e0b912; }
+.wpsd-legend-dot.is-ok { background: #22c55e; }
+.wpsd-legend-dot.is-full { background: #ef4444; }
+.wpsd-legend-dot.is-passeur { background: var(--wpsd-secondary); }
+.wpsd-legend-dot.is-sympathisant { background: var(--wpsd-primary); }
+
+/* =========================
+   PARCOURS
+========================= */
+.wpsd-parcours-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 16px;
+  min-height: 70vh;
+}
+@media (max-width: 1024px) {
+  .wpsd-parcours-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wpsd-parcours-map {
+  min-height: 400px;
+}
+.wpsd-parcours-map #wpsd_parcours_map {
+  height: 55vh;
+  border-radius: var(--wpsd-radius);
+  overflow: hidden;
+  border: 1px solid var(--wpsd-border);
+}
+
+.wpsd-parcours-timeline {
+  display: flex;
+  flex-direction: column;
+}
+.wpsd-parcours-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* =========================
+   SUBTABS
+========================= */
+.wpsd-subtabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 12px;
+  border-bottom: 2px solid var(--wpsd-border);
+}
+.wpsd-subtab {
+  padding: 10px 18px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--wpsd-muted);
+  transition: var(--wpsd-transition);
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+}
+.wpsd-subtab:hover { color: var(--wpsd-secondary); }
+.wpsd-subtab.is-active {
+  color: var(--wpsd-secondary);
+  border-bottom-color: var(--wpsd-primary);
+  font-weight: 600;
+}
+.wpsd-subpanel { display: none; }
+.wpsd-subpanel.is-active { display: block; }
+
+/* =========================
+   FORMULAIRES
+========================= */
+.wpsd-form-group { margin-bottom: 14px; }
+.wpsd-form-group label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--wpsd-secondary);
+}
+.wpsd-form-group input,
+.wpsd-form-group textarea,
+.wpsd-form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--wpsd-border);
+  border-radius: var(--wpsd-radius-sm);
+  font-size: 14px;
+  font-family: inherit;
+  transition: var(--wpsd-transition);
+  background: #fff;
+}
+.wpsd-form-group input:focus,
+.wpsd-form-group textarea:focus,
+.wpsd-form-group select:focus {
+  outline: none;
+  border-color: var(--wpsd-primary);
+  box-shadow: 0 0 0 3px rgba(224, 185, 18, 0.12);
+}
+.wpsd-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 600px) { .wpsd-form-row { grid-template-columns: 1fr; } }
+
+.wpsd-form-section {
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--wpsd-border);
+}
+.wpsd-form-section h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--wpsd-secondary);
+  margin: 0 0 12px 0;
+}
+
+/* =========================
+   BOUTONS
+========================= */
+.wpsd-btn {
+  padding: 8px 14px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: var(--wpsd-transition);
+  background: var(--wpsd-card);
+  border: 1px solid var(--wpsd-border);
+  color: var(--wpsd-text);
+  font-family: 'Exo', sans-serif;
+  border-radius: var(--wpsd-radius-sm);
+}
+.wpsd-btn:hover {
+  background: var(--wpsd-primary-light);
+  border-color: var(--wpsd-primary);
+}
+.wpsd-btn.wpsd-primary {
+  background: var(--wpsd-primary);
+  border-color: var(--wpsd-primary);
+  color: var(--wpsd-secondary);
+  font-weight: 600;
+}
+.wpsd-btn.wpsd-primary:hover {
+  background: var(--wpsd-primary-dark);
+  border-color: var(--wpsd-primary-dark);
+}
+.wpsd-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.wpsd-btn-sm { padding: 5px 10px; font-size: 12px; }
+
+/* =========================
+   ALERTES
+========================= */
+.wpsd-alert {
+  border-radius: var(--wpsd-radius-sm);
+  padding: 12px 16px;
+  margin-bottom: 14px;
+  font-size: 14px;
+}
+.wpsd-alert-success {
+  background: #dcfce7;
+  color: #166534;
+  border-left: 4px solid #22c55e;
+}
+.wpsd-alert-error {
+  background: #fee2e2;
+  color: #7f1d1d;
+  border-left: 4px solid #ef4444;
+}
+.wpsd-alert-info {
+  background: var(--wpsd-primary-light);
+  color: var(--wpsd-secondary);
+  border-left: 4px solid var(--wpsd-primary);
+}
+
+/* =========================
+   MODAL
+========================= */
+.wpsd-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 82, 71, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 16px;
+}
+.wpsd-modal[aria-hidden="false"] { display: flex; }
+.wpsd-modal-inner {
+  background: var(--wpsd-card);
+  border-radius: var(--wpsd-radius);
+  padding: 24px;
+  width: 100%;
+  max-width: 540px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+
+/* =========================
+   ADHÉSION
+========================= */
+.wpsd-subscription-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.wpsd-sub-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--wpsd-border);
+  font-size: 14px;
+}
+.wpsd-sub-row span { color: var(--wpsd-muted); }
+.wpsd-sub-row code { font-size: 12px; background: #f5f5f5; padding: 2px 6px; border-radius: 4px; }
+.wpsd-sub-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+
+/* =========================
+   DEMANDES FILTERS
+========================= */
+.wpsd-demandes-filters {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+/* =========================
+   PINS CARTE
+========================= */
+.wpsd-pin-both {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, #005247 50%, #e0b912 50%);
+}
+.wpsd-pin-act {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    background: #005247;
+}
+.wpsd-pin-acc {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    background: #e0b912;
+}
+.wpsd-legend-dot.is-both {
+    background: linear-gradient(135deg, #005247 50%, #e0b912 50%);
+}
+.wpsd-modal-inner .wpsd-form-group:has(input[type="checkbox"]) {
+    padding: 8px 0;
+    margin-bottom: 4px;
+}
+
+.wpsd-modal-inner .wpsd-form-group:has(input[type="checkbox"]) label {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.wpsd-modal-inner .wpsd-form-group:has(input[type="checkbox"]) input[type="checkbox"] {
+    width: auto !important;
+    margin: 0;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.wpsd-step-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #005247;
+    color: #FBF1CA;
+    font-size: 13px;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .wpsd-tabs { flex-direction: column; }
+  .wpsd-tab { border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .wpsd-stats-row { grid-template-columns: 1fr; }
+  .wpsd-dashboard-header { flex-direction: column; text-align: center; }
+}
