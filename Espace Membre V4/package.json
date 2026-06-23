@@ -1,0 +1,12 @@
+{
+  "name": "wp-stripe-dashboard",
+  "version": "0.2.0",
+  "private": true,
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node build.js --watch"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.0"
+  }
+}

@@ -1,0 +1,112 @@
+/* Fond général */
+body.login {
+    background: #005247;
+    font-family: 'Exo', sans-serif;
+}
+
+/* Logo */
+.login h1 a {
+    background-image: none !important;
+    background-size: contain;
+    width: auto;
+    height: auto;
+    text-indent: 0;
+    font-size: 26px;
+    font-weight: 700;
+    color: #FBF1CA;
+    text-decoration: none;
+    padding-bottom: 20px;
+}
+
+/* Boîte de connexion */
+.login #login {
+    padding: 30px;
+    background: #FBF1CA;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+/* Titres */
+.login #login h2 {
+    color: #005247;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Labels */
+.login label {
+    color: #005247;
+    font-weight: 500;
+}
+
+/* Champs */
+.login input[type="text"],
+.login input[type="password"],
+.login input[type="email"] {
+    background: #fff;
+    border: 1px solid #e0e4e0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: #005247;
+}
+
+.login input[type="text"]:focus,
+.login input[type="password"]:focus,
+.login input[type="email"]:focus {
+    border-color: #e0b912;
+    box-shadow: 0 0 0 3px rgba(224,185,18,0.15);
+}
+
+/* Bouton principal */
+.login .button-primary {
+    background: #e0b912 !important;
+    border: 1px solid #e0b912 !important;
+    color: #005247 !important;
+    font-weight: 600 !important;
+    border-radius: 30px !important;
+    padding: 10px 20px !important;
+    font-size: 15px !important;
+    width: 100%;
+    text-align: center;
+    transition: all 0.2s;
+}
+
+.login .button-primary:hover {
+    background: #c2a50f !important;
+    border-color: #c2a50f !important;
+}
+
+/* Liens */
+.login #backtoblog a,
+.login #nav a {
+    color: #005247 !important;
+    font-weight: 500;
+}
+
+.login #backtoblog a:hover,
+.login #nav a:hover {
+    color: #e0b912 !important;
+}
+
+/* Messages */
+.login .message {
+    background: #dcfce7;
+    border-left: 4px solid #22c55e;
+    color: #166534;
+}
+
+.login #login_error {
+    background: #fee2e2;
+    border-left: 4px solid #ef4444;
+    color: #7f1d1d;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login #login {
+        margin: 10px;
+        padding: 20px;
+    }
+}

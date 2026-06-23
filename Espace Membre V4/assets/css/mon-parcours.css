@@ -1,0 +1,287 @@
+/* ============================================================
+   MON PARCOURS - Style des étapes et de la timeline
+   ============================================================ */
+
+.wpsd-parcours-layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 16px;
+    min-height: 600px;
+}
+
+@media (max-width: 900px) {
+    .wpsd-parcours-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---- Carte ---- */
+.wpsd-parcours-map .wpsd-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+#wpsd_parcours_map {
+    flex: 1;
+    min-height: 450px;
+    border-radius: 0 0 8px 8px;
+}
+
+/* ---- Timeline / Étapes ---- */
+.wpsd-parcours-timeline .wpsd-card {
+    padding: 0;
+    overflow: hidden;
+}
+
+.wpsd-parcours-timeline .wpsd-card > .wpsd-card-header {
+    padding: 12px 16px;
+    background: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Étapes individuelles */
+.wpsd-etape {
+    position: relative;
+    padding: 12px 16px 12px 32px;
+    border-left: 3px solid #d1d5db;
+    margin-left: 12px;
+    transition: all 0.2s ease;
+}
+
+.wpsd-etape.active {
+    border-left-color: #005247;
+    background: #f0fdf4;
+}
+
+.wpsd-etape::before {
+    content: attr(data-numero);
+    position: absolute;
+    left: -14px;
+    top: 12px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #d1d5db;
+    color: #fff;
+    text-align: center;
+    line-height: 26px;
+    font-size: 12px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.wpsd-etape.active::before {
+    background: #005247;
+}
+
+.wpsd-etape.completed::before {
+    background: #166534;
+}
+
+.wpsd-etape-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.wpsd-etape-dates {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+.wpsd-etape-infos {
+    font-size: 13px;
+    margin-top: 8px;
+    padding: 8px;
+    background: #f9fafb;
+    border-radius: 6px;
+}
+
+.wpsd-etape-infos .info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0;
+}
+
+.wpsd-etape-infos .info-label {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.wpsd-etape-actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+/* Actions sur les étapes */
+.wpsd-etape-btn {
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    border: 1px solid #d1d5db;
+    background: #fff;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.wpsd-etape-btn:hover {
+    background: #f3f4f6;
+}
+
+.wpsd-etape-btn.primary {
+    background: #005247;
+    color: #fff;
+    border-color: #005247;
+}
+
+.wpsd-etape-btn.primary:hover {
+    background: #003d36;
+}
+
+.wpsd-etape-btn.danger {
+    color: #dc2626;
+    border-color: #dc2626;
+}
+
+.wpsd-etape-btn.danger:hover {
+    background: #fef2f2;
+}
+
+.wpsd-etape-btn.selected {
+    background: #005247;
+    color: #fff;
+    border-color: #005247;
+}
+
+/* Barre de progression */
+.wpsd-parcours-progress {
+    padding: 12px 16px;
+    background: #f9fafb;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.wpsd-parcours-progress-bar {
+    height: 6px;
+    background: #e5e7eb;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.wpsd-parcours-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #005247, #166534);
+    border-radius: 3px;
+    transition: width 0.5s ease;
+}
+
+.wpsd-parcours-progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 4px;
+}
+
+/* Badge de statut */
+.wpsd-statut-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.wpsd-statut-badge.draft {
+    background: #f3f4f6;
+    color: #6b7280;
+}
+
+.wpsd-statut-badge.pending_acceptance {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.wpsd-statut-badge.accepted {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.wpsd-statut-badge.paid {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.wpsd-statut-badge.completed {
+    background: #d1fae5;
+    color: #166534;
+}
+
+.wpsd-statut-badge.cancelled {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* Détail des réservations popup */
+.wpsd-reservation-status {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+}
+
+.wpsd-reservation-status .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.wpsd-reservation-status .dot.pending { background: #f59e0b; }
+.wpsd-reservation-status .dot.accepted { background: #10b981; }
+.wpsd-reservation-status .dot.awaiting_confirmation { background: #3b82f6; }
+.wpsd-reservation-status .dot.completed { background: #059669; }
+.wpsd-reservation-status .dot.rejected { background: #ef4444; }
+
+/* Popup Leaflet custom */
+.wpsd-activity-popup h4 {
+    margin: 0 0 4px;
+    font-size: 14px;
+    color: #005247;
+}
+
+.wpsd-activity-popup p {
+    margin: 2px 0;
+    font-size: 12px;
+    color: #4b5563;
+}
+
+/* Résumé */
+.wpsd-parcours-summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 8px;
+    padding: 12px 16px;
+    background: #f0fdf4;
+    border-bottom: 1px solid #d1fae5;
+}
+
+.wpsd-parcours-summary-item {
+    text-align: center;
+}
+
+.wpsd-parcours-summary-item .value {
+    font-size: 20px;
+    font-weight: 700;
+    color: #005247;
+}
+
+.wpsd-parcours-summary-item .label {
+    font-size: 11px;
+    color: #6b7280;
+}
